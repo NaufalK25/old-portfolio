@@ -2,4 +2,5 @@
 
 ### Credits
 
--   [SVG Logo](https://github.com/gilbarbara/logos)
+-   [SVG](https://github.com/gilbarbara/logos)
+-   [Font](https://fonts.google.com/)
