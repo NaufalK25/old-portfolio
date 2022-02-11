@@ -5,12 +5,10 @@
 # Environment variables
 .env
 
-# Config files
+# Config and Linter Files
 .editorconfig
 .ejsbrc.json
 .eslintrc.js
-tailwind.config.js
-tsconfig.json
 
 # Visual Studio Code
 .vscode
