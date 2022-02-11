@@ -8,7 +8,6 @@
 # Config and Linter Files
 .editorconfig
 .ejsbrc.json
-.eslintrc.js
 
 # Visual Studio Code
 .vscode
