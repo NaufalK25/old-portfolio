@@ -1,12 +1,7 @@
-import { Express, Request, Response } from 'express';
-import { contactModel } from '../models/contactModel';
+import { Express } from 'express';
+import { getIndex } from '../controllers/indexController';
 
-export const baseRoutes = async (app: Express): Promise<void> => {
-    const contacts = await contactModel.find();
+export const baseRoutes = (app: Express): void => {
     app.route('/').
-        get((req: Request, res: Response): void => {
-            res.render('index', {
-                contacts
-            });
-        });
+        get(getIndex);
 };
