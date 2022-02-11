@@ -18,10 +18,13 @@ app.use(express.static('public'));
 app.use(express.static('dist/public'));
 app.use('/uploads', express.static('uploads'));
 
+// Connect to database
+require('./src/config/database');
+
 // Routes
 baseRoutes(app);
 
 // Start server
 app.listen(port, (): void => {
-    console.log(`My Portofolio is listening to ${baseUrl}`);
+    console.log(`Portfolio is listening to ${baseUrl}`);
 });

@@ -1,4 +1,4 @@
-# my-portofolio
+# portfolio
 
 ### Credits
 
