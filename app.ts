@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import expressLayouts from 'express-ejs-layouts';
 import morgan from 'morgan';
 import { baseUrl, port } from './src/config/constants';
 import { baseRoutes } from './src/routes/baseRoutes';
@@ -13,6 +14,7 @@ const app = express();
 app.use(morgan('dev'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
 // Express Middlewares
 app.use(express.static('public'));
 app.use(express.static('dist/public'));

@@ -8,6 +8,8 @@
         "watch-ts": "tsc -w",
         "build-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/index.css",
         "watch-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/index.css --watch",
+        "build-error404-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/error-404.css",
+        "watch-error404-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/error-404.css --watch",
         "postinstall": "npm run build-ts && npm run build-tw",
         "start": "npm run serve",
         "serve": "npm run postinstall && ts-node app.ts",
@@ -25,12 +27,14 @@
         "dotenv": "^16.0.0",
         "ejs": "^3.1.6",
         "express": "^4.17.2",
+        "express-ejs-layouts": "^2.5.1",
         "mongoose": "^6.2.1",
         "node": "^17.4.0",
         "tslib": "^2.3.1"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",
+        "@types/express-ejs-layouts": "^2.5.0",
         "@types/mongoose": "^5.11.97",
         "@types/morgan": "^1.9.3",
         "@types/node": "^17.0.16",
