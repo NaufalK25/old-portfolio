@@ -1,7 +1,8 @@
 import { model, Schema } from 'mongoose';
 import { ISkill } from '../interfaces/skillInterface';
+import { stackSchema } from '../models/stackModel';
 
-export const skillSchema = new Schema<ISkill>({
+export const skillSchema: Schema<ISkill> = new Schema<ISkill>({
     name: {
         type: String,
         required: true,
@@ -10,6 +11,7 @@ export const skillSchema = new Schema<ISkill>({
         type: Schema.Types.ObjectId,
         ref: 'Stack',
         required: true,
+        schema: stackSchema,
     }]
 });
 
