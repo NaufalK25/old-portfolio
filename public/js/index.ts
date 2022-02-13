@@ -55,8 +55,8 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
 
                 // Middle Section
                 const middleSection = <HTMLDivElement>document.createElement('section');
-                middleSection.classList.add(...['w-full', 'h-48', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-1.5']);
-                middleSection.style.backgroundImage = `url(img/repo/foodgallery.png)`;
+                middleSection.classList.add(...['w-full', 'h-56', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-1.5']);
+                middleSection.style.backgroundImage = `url(img/repo/${repo.name}.png)`;
                 middleSection.classList.add(...['bg-cover', 'bg-center', 'bg-no-repeat', 'w-full', 'h-full']);
 
                 // Repo Topics
