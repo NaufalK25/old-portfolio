@@ -29,23 +29,23 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
     .then((repos: any): void => {
         repos.forEach((repo: any): void => {
             if (repo.full_name !== 'NaufalK25/NaufalK25') {
-                const repoSection = document.createElement('section');
+                const repoSection = <HTMLDivElement>document.createElement('section');
                 repoSection.classList.add(...['border', 'border-black', 'w-1/3', 'gap-y-5', 'rounded-md', 'flex', 'flex-col', 'items-center']);
                 repoSection.title = repo.name;
 
                 // Top Section
-                const topSection = document.createElement('section');
+                const topSection = <HTMLDivElement>document.createElement('section');
                 topSection.classList.add(...['flex', 'justify-between', 'w-full', 'px-3', 'pt-1.5']);
 
                 // Repo Name
-                const repoName = document.createElement('h4');
+                const repoName = <HTMLHeadingElement>document.createElement('h4');
                 repoName.classList.add(...['text-sm', 'font-bold']);
                 repoName.innerText = repo.name;
                 topSection.appendChild(repoName);
 
                 // Repo License
                 if (repo.license) {
-                    const repoLicense = document.createElement('a');
+                    const repoLicense = <HTMLAnchorElement>document.createElement('a');
                     repoLicense.classList.add(...['text-sm', 'hover:underline', 'hover:font-bold', 'active:underline', 'active:font-bold'])
                     repoLicense.href = repo.license.url;
                     repoLicense.title = repo.license.name;
@@ -54,21 +54,21 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
                 }
 
                 // Middle Section
-                const middleSection = document.createElement('section');
+                const middleSection = <HTMLDivElement>document.createElement('section');
                 middleSection.classList.add(...['w-full', 'h-48', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-1.5']);
                 middleSection.style.backgroundImage = `url(img/repo/foodgallery.png)`;
                 middleSection.classList.add(...['bg-cover', 'bg-center', 'bg-no-repeat', 'w-full', 'h-full']);
 
                 // Repo Topics
-                const repoTopics = document.createElement('details');
-                const repoTopicsSummary = document.createElement('summary');
+                const repoTopics = <HTMLDetailsElement>document.createElement('details');
+                const repoTopicsSummary = <HTMLElement>document.createElement('summary');
                 repoTopicsSummary.classList.add(...['text-sm', 'font-bold', 'text-gray-600', 'cursor-pointer']);
                 repoTopicsSummary.innerText = 'Topics';
                 repoTopicsSummary.title = 'Topics';
 
-                const repoTopicsList = document.createElement('ul');
+                const repoTopicsList = <HTMLUListElement>document.createElement('ul');
                 repo.topics.forEach((topic: string): void => {
-                    const repoTopic = document.createElement('li');
+                    const repoTopic = <HTMLLIElement>document.createElement('li');
                     repoTopic.classList.add(...['text-sm', 'text-gray-600', 'cursor-pointer']);
                     repoTopic.innerText = topic;
                     repoTopic.title = topic;
@@ -80,15 +80,15 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
                 middleSection.appendChild(repoTopics);
 
                 // Repo Stacks
-                const repoStacks = document.createElement('details');
-                const repoStacksSummary = document.createElement('summary');
+                const repoStacks = <HTMLDetailsElement>document.createElement('details');
+                const repoStacksSummary = <HTMLElement>document.createElement('summary');
                 repoStacksSummary.classList.add(...['text-sm', 'font-bold', 'text-gray-600', 'cursor-pointer']);
                 repoStacksSummary.innerText = 'Stacks';
                 repoStacksSummary.title = 'Stacks';
 
-                const repoStacksList = document.createElement('ul');
+                const repoStacksList = <HTMLUListElement>document.createElement('ul');
                 getRepoStack(repo.name).forEach((stack: string): void => {
-                    const repoStack = document.createElement('li');
+                    const repoStack = <HTMLLIElement>document.createElement('li');
                     repoStack.classList.add(...['text-sm', 'text-gray-600', 'cursor-pointer']);
                     repoStack.innerText = stack;
                     repoStack.title = stack;
@@ -100,7 +100,7 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
                 middleSection.appendChild(repoStacks);
 
                 // Repo Link
-                const repoLink = document.createElement('a');
+                const repoLink = <HTMLAnchorElement>document.createElement('a');
                 repoLink.href = repo.html_url;
                 repoLink.target = '_blank';
                 repoLink.rel = 'noopener noreferrer';
@@ -120,11 +120,11 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=updated')
                 middleSection.appendChild(repoLink);
 
                 // Bottom Section
-                const bottomSection = document.createElement('section');
+                const bottomSection = <HTMLDivElement>document.createElement('section');
                 bottomSection.classList.add(...['p-1']);
 
                 // Repo Description
-                const repoDescription = document.createElement('p');
+                const repoDescription = <HTMLParagraphElement>document.createElement('p');
                 repoDescription.classList.add(...['text-sm']);
                 repoDescription.innerText = repo.description;
                 bottomSection.appendChild(repoDescription);
