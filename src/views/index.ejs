@@ -35,7 +35,7 @@
     </section>
     <!-- My Skills -->
     <section id="my-skills" class="flex flex-col justify-center items-center mt-24 gap-y-10">
-        <%- include( 'includes/section-title', { sectionTitle:'My Skills'}) %>
+        <%- include( 'includes/section-title', { sectionTitle: 'My Skills' }) %>
         <!-- My Skills List -->
         <section class="flex text-center gap-10 flex-wrap w-full justify-center">
             <% for (const skill of skills) { %>
@@ -53,12 +53,14 @@
             </section>
             <% } %>
         </section>
-        <!-- My Projects -->
-        <section id="my-projects" class="flex justify-center mt-24">
-            <%- include('includes/section-title', { sectionTitle: 'My Projects' }) %>
-        </section>
-        <!-- Download -->
-        <section class="flex justify-center p-10 mt-24">
-            <%- include('includes/download-button') %>
-        </section>
+    </section>
+    <!-- My Projects -->
+    <section id="my-projects" class="flex justify-center mt-24 flex-col items-center gap-y-10">
+        <%- include('includes/section-title', { sectionTitle: 'My Projects' }) %>
+        <section id="my-project-list" class="flex text-center gap-10 flex-wrap w-full justify-center"></section>
+    </section>
+    <!-- Download -->
+    <section class="flex justify-center p-10 mt-24">
+        <%- include('includes/download-button') %>
+    </section>
 </main>
