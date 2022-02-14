@@ -1,8 +1,8 @@
 import { model, Schema } from 'mongoose';
-import { ISkill } from '../interfaces/skillInterface';
+import { IProject } from '../interfaces/projectInterface';
 import { stackSchema } from '../models/stackModel';
 
-export const skillSchema: Schema<ISkill> = new Schema<ISkill>({
+export const projectSchema = new Schema<IProject>({
     name: {
         type: String,
         required: true,
@@ -15,4 +15,4 @@ export const skillSchema: Schema<ISkill> = new Schema<ISkill>({
     }],
 });
 
-export const skillModel = model<ISkill>('Skill', skillSchema);
+export const projectModel = model<IProject>('Project', projectSchema);

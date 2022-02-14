@@ -5,4 +5,5 @@ export interface IStack {
     name: string;
     svg: string;
     skill: Schema.Types.ObjectId;
+    projects: Schema.Types.ObjectId[];
 }

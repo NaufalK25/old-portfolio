@@ -24,7 +24,7 @@ const getRepoStacks = (repoName: string): string[] => {
             stacks = ['Python', 'Heroku'];
             break;
         case 'ci3-foodgallery':
-            stacks = ['PHP', 'CodeIgniter 3', 'MySQL', 'Heroku'];
+            stacks = ['Bootstrap', 'PHP', 'CodeIgniter 3', 'MySQL', 'Heroku'];
             break;
         case 'django-game-api':
             stacks = ['Python', 'Django', 'PostgreSQL', 'Heroku'];
@@ -42,7 +42,7 @@ const getRepoStacks = (repoName: string): string[] => {
             stacks = ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
             break;
         case 'img-converter':
-            stacks = ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
             break;
         default:
             stacks = [];

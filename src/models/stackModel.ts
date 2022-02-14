@@ -1,8 +1,8 @@
 import { model, Schema } from 'mongoose';
 import { IStack } from '../interfaces/stackInterface';
-import { skillSchema } from '../models/skillModel';
+import { projectSchema } from '../models/projectModel';
 
-export const stackSchema = new Schema<IStack>({
+export const stackSchema: Schema<IStack> = new Schema<IStack>({
     name: {
         type: String,
         required: true,
@@ -16,6 +16,12 @@ export const stackSchema = new Schema<IStack>({
         ref: 'Skill',
         required: true,
     },
+    projects: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Project',
+        required: true,
+        schema: projectSchema,
+    }],
 });
 
 export const stackModel = model<IStack>('Stack', stackSchema);
