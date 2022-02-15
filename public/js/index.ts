@@ -1,3 +1,33 @@
+// Navbar Scroll
+const navAboutMe = <HTMLParagraphElement>document.querySelector('p#nav-about-me');
+const navMySkills = <HTMLParagraphElement>document.querySelector('p#nav-my-skills');
+const navMyProjects = <HTMLParagraphElement>document.querySelector('p#nav-my-projects');
+
+const aboutMeSection = <HTMLDivElement>document.querySelector('section#about-me');
+const mySkillsSection = <HTMLDivElement>document.querySelector('section#my-skills');
+const myProjectsSection = <HTMLDivElement>document.querySelector('section#my-projects');
+
+navAboutMe.addEventListener('click', (): void => {
+    window.scrollTo({
+        top: aboutMeSection.offsetTop - 25,
+        behavior: 'smooth'
+    });
+});
+
+navMySkills.addEventListener('click', (): void => {
+    window.scrollTo({
+        top: mySkillsSection.offsetTop - 25,
+        behavior: 'smooth'
+    });
+});
+
+navMyProjects.addEventListener('click', (): void => {
+    window.scrollTo({
+        top: myProjectsSection.offsetTop - 25,
+        behavior: 'smooth'
+    });
+});
+
 const getRepoStacks = (repoName: string): string[] => {
     let stacks: string[] = [];
     switch (repoName) {
@@ -45,7 +75,7 @@ const insertSVG = (anchorElement: HTMLAnchorElement, svg: string): void => {
 }
 
 // My Projects Section
-const myProjectsSection = <HTMLDivElement>document.querySelector('section#my-project-list');
+const myProjectListSection = <HTMLDivElement>document.querySelector('section#my-project-list');
 
 fetch('https://api.github.com/users/naufalk25/repos?sort=created')
     .then((response: Response): Promise<any> => response.json())
@@ -163,8 +193,8 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 repoSection.appendChild(topSection);
                 repoSection.appendChild(middleSection);
                 repoSection.appendChild(bottomSection);
-                // Add repoSection to the myProjectsSection
-                myProjectsSection.appendChild(repoSection);
+                // Add repoSection to the myProjectListSection
+                myProjectListSection.appendChild(repoSection);
             }
         });
     });

@@ -21,6 +21,8 @@ window.onscroll = (): void => {
 };
 
 scrollToTopButton?.addEventListener('click', (): void => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
