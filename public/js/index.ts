@@ -25,6 +25,9 @@ const getRepoStacks = (repoName: string): string[] => {
         case 'img-converter':
             stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
             break;
+        case 'portfolio':
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
+            break;
         default:
             stacks = [];
             break;
