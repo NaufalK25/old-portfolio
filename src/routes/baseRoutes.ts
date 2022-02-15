@@ -5,5 +5,5 @@ import { error404Route } from '../routes/errorRoutes';
 export const baseRoutes = (app: Express): void => {
     app.route('/').
         get(getIndex);
-    app.get('*', error404Route);
+    app.use(error404Route);
 };

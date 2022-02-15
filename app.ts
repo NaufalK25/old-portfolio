@@ -18,7 +18,6 @@ app.use(expressLayouts);
 // Express Middlewares
 app.use(express.static('public'));
 app.use(express.static('dist/public'));
-app.use('/uploads', express.static('uploads'));
 
 // Connect to database
 require('./src/config/database');
