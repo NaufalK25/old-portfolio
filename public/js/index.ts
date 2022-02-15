@@ -1,22 +1,3 @@
-// Scroll Top Button
-const screenHeight = window.innerHeight;
-const scrollToTopButton = <HTMLButtonElement>document.querySelector('button#scroll-to-top');
-
-window.onscroll = (): void => { scrollFunction() };
-
-const scrollFunction = (): void => {
-    if (document.body.scrollTop > screenHeight / 3 || document.documentElement.scrollTop > screenHeight / 3) {
-        scrollToTopButton?.classList.remove('hidden');
-    } else {
-        scrollToTopButton?.classList.add('hidden');
-    }
-};
-
-scrollToTopButton?.addEventListener('click', (): void => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
 const getRepoStacks = (repoName: string): string[] => {
     let stacks: string[] = [];
     switch (repoName) {
@@ -67,9 +48,9 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
     .then((response: Response): Promise<any> => response.json())
     .then((repos: any): void => {
         repos.forEach((repo: any): void => {
-            if (repo.full_name !== 'NaufalK25/NaufalK25') {
+            if (repo.name !== 'NaufalK25') {
                 const repoSection = <HTMLDivElement>document.createElement('section');
-                repoSection.classList.add(...['border', 'border-black', 'w-1/3', 'gap-y-3', 'rounded-md', 'flex', 'flex-col', 'items-center', 'py-1.5']);
+                repoSection.classList.add(...['border', 'border-slate-800', 'w-1/3', 'gap-y-3', 'rounded-md', 'flex', 'flex-col', 'items-center', 'py-1.5', 'dark:border-slate-100']);
                 repoSection.title = repo.name;
 
                 // Top Section
@@ -78,14 +59,14 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
 
                 // Repo Name
                 const repoName = <HTMLHeadingElement>document.createElement('h4');
-                repoName.classList.add(...['text-sm', 'font-bold']);
+                repoName.classList.add(...['text-sm', 'font-bold', 'text-slate-800', 'dark:text-slate-100']);
                 repoName.innerText = repo.name;
                 topSection.appendChild(repoName);
 
                 // Repo License
                 if (repo.license) {
                     const repoLicense = <HTMLAnchorElement>document.createElement('a');
-                    repoLicense.classList.add(...['text-sm', 'hover:underline', 'hover:font-bold', 'active:underline', 'active:font-bold'])
+                    repoLicense.classList.add(...['text-sm', 'hover:underline', 'hover:font-bold', 'active:font-bold', 'focus:font-bold', 'text-slate-800', 'dark:text-slate-100']);
                     repoLicense.href = repo.license.url;
                     repoLicense.title = repo.license.name;
                     repoLicense.innerText = repo.license.name;
@@ -100,7 +81,7 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
 
                 // Middle Left Section
                 const middleLeftSection = <HTMLDivElement>document.createElement('section');
-                middleLeftSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'rounded-md', 'p-1.5', 'shadow-lg', 'shadow-gray-500/50']);
+                middleLeftSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'rounded-md', 'p-1.5', 'shadow-lg', 'shadow-gray-500/50', 'text-slate-800', 'dark:text-slate-800']);
 
                 // Repo Stacks
                 const repoStacks = <HTMLDetailsElement>document.createElement('details');
@@ -171,7 +152,7 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
 
                 // Repo Description
                 const repoDescription = <HTMLParagraphElement>document.createElement('p');
-                repoDescription.classList.add(...['text-sm']);
+                repoDescription.classList.add(...['text-sm', 'text-slate-800', 'dark:text-slate-100']);
                 repoDescription.innerText = repo.description;
                 bottomSection.appendChild(repoDescription);
 

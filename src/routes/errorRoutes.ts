@@ -5,6 +5,6 @@ export const error404Route = (req: Request, res: Response): void => {
         title: '404 Not Found',
         layout: 'layouts/base',
         styles: ['error-404'],
-        scripts: [],
+        scripts: ['base'],
     });
 }

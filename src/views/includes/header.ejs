@@ -1,21 +1,24 @@
 <header>
     <nav class="flex justify-between px-20 pt-1.5">
         <section class="flex items-center">
-            <a href="/" title="Muhammad Naufal Kateni" class="hover:underline active:underline hover:font-bold active:font-bold">
+            <a href="/" title="Muhammad Naufal Kateni" class="hover:underline hover:font-bold active:font-bold focus:font-bold">
                 Muhammad Naufal Kateni
             </a>
         </section>
         <section class="flex items-center gap-x-4">
-            <a href="/#about-me" title="About Me" class="hover:underline active:underline hover:font-bold active:font-bold">
+            <a href="/#about-me" title="About Me" class="hover:underline hover:font-bold active:font-bold focus:font-bold">
                 About Me
             </a>
-            <a href="/#my-skills" title="My Skills" class="hover:underline active:underline hover:font-bold active:font-bold">
+            <a href="/#my-skills" title="My Skills" class="hover:underline hover:font-bold active:font-bold focus:font-bold">
                 My Skills
             </a>
-            <a href="/#my-projects" title="My Projects" class="hover:underline active:underline hover:font-bold active:font-bold">
+            <a href="/#my-projects" title="My Projects" class="hover:underline hover:font-bold active:font-bold focus:font-bold">
                 My Projects
             </a>
             <%- include('download-button') %>
+            <div id="switcher-container" class="w-10 h-5 rounded-full bg-slate-800 dark:bg-slate-100">
+                <div id="switcher" class="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 cursor-pointer"></div>
+            </div>
         </section>
     </nav>
 </header>
