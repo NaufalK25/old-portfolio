@@ -9,6 +9,7 @@
         "build-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/output.css",
         "watch-tw": "tailwindcss -i ./public/css/input.css -o ./dist/public/css/output.css --watch",
         "build": "npm run build-ts && npm run build-tw",
+        "install": "npm install",
         "start": "npm run serve",
         "serve": "npx ts-node app.ts",
         "dev": "npm run build && tsnd --respawn --pretty --transpile-only app.ts",
