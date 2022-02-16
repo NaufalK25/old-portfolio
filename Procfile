@@ -1,1 +1,1 @@
-npm run start
+node dist/app.js
