@@ -3,6 +3,7 @@ const switcher = <HTMLDivElement>document.querySelector('#switcher');
 const htmlElement = document.documentElement;
 switcher.addEventListener('click', (): void => {
     switcher.classList.toggle('translate-x-5');
+    switcher.title = `Switch to ${(switcher.title === 'Switch to Dark Mode') ? 'Light' : 'Dark'} Mode`;
     htmlElement.classList.toggle('dark');
 });
 

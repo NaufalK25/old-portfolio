@@ -8,8 +8,8 @@ export const getIndex = async (req: Request, res: Response): Promise<void> => {
     res.render('index', {
         title: 'Muhammad Naufal Kateni',
         layout: 'layouts/base',
-        styles: ['index'],
-        scripts: ['base', 'index'],
+        styles: ['output'],
+        scripts: ['global', 'index'],
         contacts,
         skills,
     });
