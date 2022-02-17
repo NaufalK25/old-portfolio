@@ -1,4 +1,4 @@
-import { connect, CallbackError, Mongoose } from 'mongoose';
+import { connect, CallbackError } from 'mongoose';
 
 connect(
     process.env.MONGO_URI || 'mongodb://localhost:27017/portfolio',
