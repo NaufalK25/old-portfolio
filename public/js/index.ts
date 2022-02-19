@@ -81,9 +81,9 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
     .then((response: Response): Promise<any> => response.json())
     .then((repos: any): void => {
         repos.forEach((repo: any): void => {
-            if (repo.name !== 'NaufalK25') {
+            if (repo.name !== 'NaufalK25' && !repo.fork) {
                 const repoSection = <HTMLDivElement>document.createElement('section');
-                repoSection.classList.add(...['border', 'border-slate-800', 'w-1/3', 'gap-y-3', 'rounded-md', 'flex', 'flex-col', 'items-center', 'py-1.5', 'dark:border-slate-100']);
+                repoSection.classList.add(...['w-1/4', 'gap-y-3', 'flex', 'flex-col', 'items-center', 'py-1.5']);
                 repoSection.title = repo.name;
 
                 // Top Section
