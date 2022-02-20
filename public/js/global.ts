@@ -1,3 +1,21 @@
+// Nav Hamburger
+const navHamburger = <HTMLDivElement>document.querySelector('section#nav-hamburger');
+const navMenu = <HTMLDivElement>document.querySelector('section#nav-menu');
+const nav = <HTMLDivElement>document.querySelector('nav');
+navHamburger.addEventListener('click', (): void => {
+    if (navMenu.classList.contains('hidden')) {
+        navMenu.classList.remove('hidden');
+        navMenu.classList.add('flex')
+    } else {
+        navMenu.classList.remove('flex')
+        navMenu.classList.add('hidden');
+    }
+    
+
+    nav.classList.toggle('flex-col');
+});
+
+
 // Light-Dark Mode Toggle
 const switcher = <HTMLDivElement>document.querySelector('#switcher');
 const htmlElement = document.documentElement;
