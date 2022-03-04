@@ -9,7 +9,7 @@ export const getIndex = async (req: Request, res: Response): Promise<void> => {
     res.render('index', {
         title: 'Muhammad Naufal Kateni',
         metaUrl: baseUrl,
-        metaImage: `${baseUrl}images/muhammad-naufal-kateni.jpg`,
+        metaImage: `${baseUrl}img/muhammad-naufal-kateni.jpg`,
         metaDescription: 'Muhammad Naufal Kateni\'s portfolio website',
         layout: 'layouts/base',
         styles: ['output'],
