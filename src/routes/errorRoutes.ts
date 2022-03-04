@@ -5,7 +5,7 @@ export const error404Route = (req: Request, res: Response): void => {
     res.render('error-404', {
         title: '404 Not Found',
         metaUrl: `${req.protocol}://${req.get('host')}`,
-        metaImage: `${baseUrl}/images/muhammad-naufal-kateni.jpg`,
+        metaImage: `${baseUrl}images/muhammad-naufal-kateni.jpg`,
         metaDescription: 'Page not found',
         layout: 'layouts/base',
         styles: ['output'],
