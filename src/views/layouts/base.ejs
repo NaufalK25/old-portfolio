@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <meta name="title" content="<%= title %>" />
+    <meta name="description" content="<%= metaDescription %>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= metaUrl %>" />
+    <meta property="og:description" content="<%= metaDescription %>" />
+    <meta property="og:image" contePnt="<%= metaImage %>" />
+    <meta name="theme-color" content="#f1f5f9" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="<%= title %>" />
+    <meta property="twitter:title" content="<%= title %>" />
+    <meta property="twitter:url" content="<%= metaUrl %>" />
+    <meta property="twitter:description" content="<%= metaDescription %>" />
+    <meta property="twitter:image" content="<%= metaImage %>" />
+
     <%- include('../includes/style.ejs', { styles, }) %>
     <%- include('../includes/script.ejs', { scripts, }) %>
 </head>
