@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import { baseUrl } from '../config/constants';
+import { Request, Response, } from 'express';
+import { baseUrl, } from '../config/constants';
 
-export const error404Route = (req: Request, res: Response): void => {
+export const error404Route = (req: Request, res: Response) => {
     res.render('error-404', {
         title: '404 Not Found',
         metaUrl: `${req.protocol}://${req.get('host')}`,

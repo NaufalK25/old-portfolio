@@ -1,6 +1,6 @@
-import { model, Schema } from 'mongoose';
-import { IProject } from '../interfaces/projectInterface';
-import { stackSchema } from '../models/stackModel';
+import { model, Schema, } from 'mongoose';
+import { IProject, } from '../interfaces/projectInterface';
+import { stackSchema, } from '../models/stackModel';
 
 export const projectSchema = new Schema<IProject>({
     name: {

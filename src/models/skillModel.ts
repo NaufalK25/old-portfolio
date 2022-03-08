@@ -1,6 +1,6 @@
-import { model, Schema } from 'mongoose';
-import { ISkill } from '../interfaces/skillInterface';
-import { stackSchema } from '../models/stackModel';
+import { model, Schema, } from 'mongoose';
+import { ISkill, } from '../interfaces/skillInterface';
+import { stackSchema, } from '../models/stackModel';
 
 export const skillSchema: Schema<ISkill> = new Schema<ISkill>({
     name: {

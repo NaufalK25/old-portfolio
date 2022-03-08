@@ -3,60 +3,60 @@ const navAboutMe = <HTMLParagraphElement>document.querySelector('p#nav-about-me'
 const navMySkills = <HTMLParagraphElement>document.querySelector('p#nav-my-skills');
 const navMyProjects = <HTMLParagraphElement>document.querySelector('p#nav-my-projects');
 
-const aboutMeSection = <HTMLDivElement>document.querySelector('section#about-me');
-const mySkillsSection = <HTMLDivElement>document.querySelector('section#my-skills');
-const myProjectsSection = <HTMLDivElement>document.querySelector('section#my-projects');
+const aboutMeSection = <HTMLElement>document.querySelector('section#about-me');
+const mySkillsSection = <HTMLElement>document.querySelector('section#my-skills');
+const myProjectsSection = <HTMLElement>document.querySelector('section#my-projects');
 
-navAboutMe.addEventListener('click', (): void => {
+navAboutMe.addEventListener('click', () => {
     window.scrollTo({
         top: aboutMeSection.offsetTop - 25,
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 });
 
-navMySkills.addEventListener('click', (): void => {
+navMySkills.addEventListener('click', () => {
     window.scrollTo({
         top: mySkillsSection.offsetTop - 25,
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 });
 
-navMyProjects.addEventListener('click', (): void => {
+navMyProjects.addEventListener('click', () => {
     window.scrollTo({
         top: myProjectsSection.offsetTop - 25,
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 });
 
-const getRepoStacks = (repoName: string): string[] => {
+const getRepoStacks = (repoName: string) => {
     let stacks: string[] = [];
     switch (repoName) {
         case 'discordpy-regbeh':
-            stacks = ['Python', 'Heroku'];
+            stacks = ['Python', 'Heroku',];
             break;
         case 'ci3-foodgallery':
-            stacks = ['Bootstrap', 'PHP', 'CodeIgniter 3', 'MySQL', 'Heroku'];
+            stacks = ['Bootstrap', 'PHP', 'CodeIgniter 3', 'MySQL', 'Heroku',];
             break;
         case 'django-game-api':
-            stacks = ['Python', 'Django', 'PostgreSQL', 'Heroku'];
+            stacks = ['Python', 'Django', 'PostgreSQL', 'Heroku',];
             break;
         case 'ScientificComputingwithPython':
-            stacks = ['Python'];
+            stacks = ['Python',];
             break;
         case 'Codewars':
-            stacks = ['JavaScript', 'Python', 'MySQL', 'PHP'];
+            stacks = ['JavaScript', 'Python', 'MySQL', 'PHP',];
             break;
         case 'JavaScriptAlgorithmsandDataStructures':
-            stacks = ['JavaScript'];
+            stacks = ['JavaScript',];
             break;
         case 'travdir-api':
-            stacks = ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
+            stacks = ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
             break;
         case 'img-converter':
-            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
             break;
         case 'portfolio':
-            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku'];
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
             break;
         default:
             stacks = [];
@@ -65,7 +65,7 @@ const getRepoStacks = (repoName: string): string[] => {
     return stacks;
 }
 
-const insertSVG = (anchorElement: HTMLAnchorElement, svg: string): void => {
+const insertSVG = (anchorElement: HTMLAnchorElement, svg: string) => {
     anchorElement.appendChild(anchorElement.ownerDocument.importNode(
         new DOMParser().parseFromString(
             svg,
@@ -75,31 +75,31 @@ const insertSVG = (anchorElement: HTMLAnchorElement, svg: string): void => {
 }
 
 // My Projects Section
-const myProjectListSection = <HTMLDivElement>document.querySelector('section#my-project-list');
+const myProjectListSection = <HTMLElement>document.querySelector('section#my-project-list');
 
 fetch('https://api.github.com/users/naufalk25/repos?sort=created')
-    .then((response: Response): Promise<any> => response.json())
-    .then((repos: any): void => {
-        repos.forEach((repo: any): void => {
+    .then((response) => response.json())
+    .then((repos) => {
+        repos.forEach((repo: any) => {
             if (repo.name !== 'NaufalK25' && !repo.fork) {
-                const repoSection = <HTMLDivElement>document.createElement('section');
-                repoSection.classList.add(...['lg:w-1/4', 'w-3/4', 'md:w-1/3', 'gap-y-3', 'flex', 'flex-col', 'items-center', 'py-1.5']);
+                const repoSection = document.createElement('section');
+                repoSection.classList.add(...['lg:w-1/4', 'w-3/4', 'md:w-1/3', 'gap-y-3', 'flex', 'flex-col', 'items-center', 'py-1.5',]);
                 repoSection.title = repo.name;
 
                 // Top Section
-                const topSection = <HTMLDivElement>document.createElement('section');
-                topSection.classList.add(...['flex', 'justify-between', 'w-full', 'px-3', 'pt-1.5']);
+                const topSection = document.createElement('section');
+                topSection.classList.add(...['flex', 'justify-between', 'w-full', 'px-3', 'pt-1.5',]);
 
                 // Repo Name
-                const repoName = <HTMLHeadingElement>document.createElement('h4');
-                repoName.classList.add(...['text-sm', 'font-bold', 'text-slate-800', 'dark:text-slate-100']);
+                const repoName = document.createElement('h4');
+                repoName.classList.add(...['text-sm', 'font-bold', 'text-slate-800', 'dark:text-slate-100',]);
                 repoName.innerText = repo.name;
                 topSection.appendChild(repoName);
 
                 // Repo License
                 if (repo.license) {
-                    const repoLicense = <HTMLAnchorElement>document.createElement('a');
-                    repoLicense.classList.add(...['text-sm', 'hover:underline', 'hover:font-bold', 'active:font-bold', 'focus:font-bold', 'text-slate-800', 'dark:text-slate-100']);
+                    const repoLicense = document.createElement('a');
+                    repoLicense.classList.add(...['text-sm', 'hover:underline', 'hover:font-bold', 'active:font-bold', 'focus:font-bold', 'text-slate-800', 'dark:text-slate-100',]);
                     repoLicense.href = repo.license.url;
                     repoLicense.title = repo.license.name;
                     repoLicense.innerText = repo.license.name;
@@ -107,26 +107,26 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 }
 
                 // Middle Section
-                const middleSection = <HTMLDivElement>document.createElement('section');
-                middleSection.classList.add(...['w-full', 'h-60', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-3']);
+                const middleSection = document.createElement('section');
+                middleSection.classList.add(...['w-full', 'h-60', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-3',]);
                 middleSection.style.backgroundImage = `url(img/repositories/${repo.name}.png)`;
-                middleSection.classList.add(...['bg-cover', 'bg-center', 'bg-no-repeat']);
+                middleSection.classList.add(...['bg-cover', 'bg-center', 'bg-no-repeat',]);
 
                 // Middle Left Section
-                const middleLeftSection = <HTMLDivElement>document.createElement('section');
-                middleLeftSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'rounded-md', 'p-1.5', 'shadow-lg', 'shadow-gray-500/50', 'text-slate-800', 'dark:text-slate-800']);
+                const middleLeftSection = document.createElement('section');
+                middleLeftSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'rounded-md', 'p-1.5', 'shadow-lg', 'shadow-gray-500/50', 'text-slate-800', 'dark:text-slate-800',]);
 
                 // Repo Stacks
-                const repoStacks = <HTMLDetailsElement>document.createElement('details');
-                const repoStacksSummary = <HTMLElement>document.createElement('summary');
-                repoStacksSummary.classList.add(...['text-sm', 'font-bold', 'cursor-pointer']);
+                const repoStacks = document.createElement('details');
+                const repoStacksSummary = document.createElement('summary');
+                repoStacksSummary.classList.add(...['text-sm', 'font-bold', 'cursor-pointer',]);
                 repoStacksSummary.innerText = 'Stacks';
                 repoStacksSummary.title = 'Stacks';
 
-                const repoStacksList = <HTMLUListElement>document.createElement('ul');
-                getRepoStacks(repo.name).forEach((stack: string): void => {
-                    const repoStack = <HTMLLIElement>document.createElement('li');
-                    repoStack.classList.add(...['text-sm']);
+                const repoStacksList = document.createElement('ul');
+                getRepoStacks(repo.name).forEach((stack) => {
+                    const repoStack = document.createElement('li');
+                    repoStack.classList.add(...['text-sm',]);
                     repoStack.innerText = stack;
                     repoStack.title = stack;
                     repoStacksList.appendChild(repoStack);
@@ -136,13 +136,13 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 middleLeftSection.appendChild(repoStacks);
 
                 // Middle Right Section
-                const middleRightSection = <HTMLDivElement>document.createElement('section');
-                middleRightSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'p-1.5', 'rounded-md', 'shadow-lg', 'shadow-gray-500/50']);
+                const middleRightSection = document.createElement('section');
+                middleRightSection.classList.add(...['flex', 'gap-x-2', 'bg-gray-300', 'p-1.5', 'rounded-md', 'shadow-lg', 'shadow-gray-500/50',]);
 
                 // Repo Homepage
                 if (repo.homepage) {
-                    const repoHomepage = <HTMLAnchorElement>document.createElement('a');
-                    repoHomepage.classList.add(...['-rotate-45']);
+                    const repoHomepage = document.createElement('a');
+                    repoHomepage.classList.add(...['-rotate-45',]);
                     repoHomepage.href = repo.homepage;
                     repoHomepage.target = '_blank';
                     repoHomepage.title = 'Homepage';
@@ -158,7 +158,7 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 }
 
                 // Repo Link
-                const repoLink = <HTMLAnchorElement>document.createElement('a');
+                const repoLink = document.createElement('a');
                 repoLink.href = repo.html_url;
                 repoLink.target = '_blank';
                 repoLink.title = 'Repository';
@@ -180,12 +180,12 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 middleSection.appendChild(middleRightSection);
 
                 // Bottom Section
-                const bottomSection = <HTMLDivElement>document.createElement('section');
-                bottomSection.classList.add(...['p-1']);
+                const bottomSection = document.createElement('section');
+                bottomSection.classList.add(...['p-1',]);
 
                 // Repo Description
-                const repoDescription = <HTMLParagraphElement>document.createElement('p');
-                repoDescription.classList.add(...['text-sm', 'text-slate-800', 'dark:text-slate-100']);
+                const repoDescription = document.createElement('p');
+                repoDescription.classList.add(...['text-sm', 'text-slate-800', 'dark:text-slate-100',]);
                 repoDescription.innerText = repo.description;
                 bottomSection.appendChild(repoDescription);
 
