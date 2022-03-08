@@ -28,7 +28,7 @@ const screenHeight = window.innerHeight;
 const scrollToTopButton = <HTMLButtonElement>document.querySelector('button#scroll-to-top');
 
 window.onscroll = () => {
-    ((): void => {
+    (() => {
         if (document.body.scrollTop > screenHeight / 3 || document.documentElement.scrollTop > screenHeight / 3) {
             scrollToTopButton?.classList.remove('hidden');
         } else {
