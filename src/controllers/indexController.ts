@@ -1,9 +1,9 @@
-import { Request, Response } from 'express';
-import { baseUrl } from '../config/constants';
-import { contactModel } from '../models/contactModel';
-import { skillModel } from '../models/skillModel';
+import { Request, Response, } from 'express';
+import { baseUrl, } from '../config/constants';
+import { contactModel, } from '../models/contactModel';
+import { skillModel, } from '../models/skillModel';
 
-export const getIndex = async (req: Request, res: Response): Promise<void> => {
+export const getIndex = async (req: Request, res: Response) => {
     const skills = await skillModel.find().populate('stacks');
     const contacts = await contactModel.find();
     res.render('index', {
