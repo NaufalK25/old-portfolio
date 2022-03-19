@@ -1,4 +1,4 @@
-import { Schema, } from "mongoose";
+import { Schema } from "mongoose";
 
 export interface IContact {
     _id: Schema.Types.ObjectId;
