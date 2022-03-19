@@ -31,21 +31,6 @@ navMyProjects.addEventListener('click', () => {
 const getRepoStacks = (repoName: string) => {
     let stacks: string[] = [];
     switch (repoName) {
-        case 'discordpy-regbeh':
-            stacks = ['Python', 'Heroku',];
-            break;
-        case 'ci3-foodgallery':
-            stacks = ['Bootstrap', 'PHP', 'CodeIgniter 3', 'MySQL', 'Heroku',];
-            break;
-        case 'django-game-api':
-            stacks = ['Python', 'Django', 'PostgreSQL', 'Heroku',];
-            break;
-        case 'ScientificComputingwithPython':
-            stacks = ['Python',];
-            break;
-        case 'Codewars':
-            stacks = ['JavaScript', 'Python', 'MySQL', 'PHP',];
-            break;
         case 'JavaScriptAlgorithmsandDataStructures':
             stacks = ['JavaScript',];
             break;
@@ -57,6 +42,9 @@ const getRepoStacks = (repoName: string) => {
             break;
         case 'portfolio':
             stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
+            break;
+        case 'todo-app':
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Heroku',];
             break;
         default:
             stacks = [];

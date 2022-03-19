@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
-import { baseUrl, port, } from './src/config/constants';
-import { baseRoutes, } from './src/routes/baseRoutes';
+import morgan from 'morgan';
+import { baseUrl, port } from './src/config/constants';
+import { baseRoutes } from './src/routes/baseRoutes';
 
 // Get all environment variables
 dotenv.config();
