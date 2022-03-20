@@ -44,7 +44,7 @@ const getRepoStacks = (repoName: string) => {
             stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
             break;
         case 'todo-app':
-            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Heroku',];
+            stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL',];
             break;
         default:
             stacks = [];
