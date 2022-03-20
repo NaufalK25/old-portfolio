@@ -11,7 +11,7 @@
         "build": "npm run build-ts && npm run build-tw",
         "start": "npm run serve",
         "serve": "node dist/app.js",
-        "dev": "npm run build && tsnd --respawn --pretty --transpile-only app.ts",
+        "dev": "tsnd --respawn --pretty --transpile-only app.ts",
         "lint": "eslint . --ext .ts",
         "ejs-lint": "npx ejs-lint ./src/views/**/*.ejs",
         "test": "echo \"Error: no test specified\" && exit 1"
