@@ -46,6 +46,9 @@ const getRepoStacks = (repoName: string) => {
         case 'todo-app':
             stacks = ['Tailwind CSS', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL',];
             break;
+        case 'hangman':
+            stacks = ['TypeScript',];
+            break;
         default:
             stacks = [];
             break;
