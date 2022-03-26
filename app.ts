@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import morgan from 'morgan';
-import path from 'path';
 import { baseUrl, port } from './src/config/constants';
 import { baseRoute } from './src/routes/base.route';
 import { errorRoute } from './src/routes/error.route';
@@ -18,8 +17,8 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 // Express Middlewares
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'dist', 'public')));
+app.use(express.static('public'));
+app.use(express.static('dist/public'));
 
 // Connect to database
 require('./src/config/database');
