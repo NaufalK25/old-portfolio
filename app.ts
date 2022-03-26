@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 // Third Party Middlewares
-app.set('views', path.join(__dirname, 'src/views'));
+app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 // Express Middlewares
