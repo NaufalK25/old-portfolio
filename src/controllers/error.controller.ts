@@ -5,7 +5,7 @@ export const error404 = (req: Request, res: Response) => {
     const url = req.url;
     let subtractor = url.endsWith('/') ? 1 : 2;
 
-    let urlLength = url.replace(/\/$/, '').split('/').length - subtractor;
+    let urlLength = url.split('/').length - subtractor;
     if (urlLength < 0) urlLength = 0;
 
     let trailingDotUrl = '';
