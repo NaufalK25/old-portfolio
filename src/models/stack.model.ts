@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose';
-import { IStack } from '../interfaces/stackInterface';
+import { IStack } from '../interfaces/stack.interface';
 
 export const stackSchema: Schema<IStack> = new Schema<IStack>({
     name: {

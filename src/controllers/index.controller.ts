@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { baseUrl } from '../config/constants';
-import { contactModel } from '../models/contactModel';
-import { skillModel } from '../models/skillModel';
+import { contactModel } from '../models/contact.model';
+import { skillModel } from '../models/skill.model';
 
 export const getIndex = async (req: Request, res: Response) => {
     const skills = await skillModel.find().populate('stacks');
@@ -16,5 +16,6 @@ export const getIndex = async (req: Request, res: Response) => {
         scripts: ['global', 'index'],
         contacts,
         skills,
+        trailingDotUrl: '',
     });
 }
