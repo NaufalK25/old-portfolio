@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
-import morgan from 'morgan';
 import path from 'path';
 import { baseUrl, port } from './src/config/constants';
 import { baseRoute } from './src/routes/base.route';
@@ -13,7 +12,6 @@ dotenv.config();
 const app = express();
 
 // Third Party Middlewares
-app.use(morgan('dev'));
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
