@@ -34,6 +34,9 @@ const getRepoStacks = (repoName: string) => {
         case 'JavaScriptAlgorithmsandDataStructures':
             stacks = ['JavaScript',];
             break;
+        case 'BackEndDevelopmentandAPIs':
+            stacks = ['JavaScript', 'Node.js', 'Express', 'MongoDB',];
+            break;
         case 'travdir-api':
             stacks = ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Heroku',];
             break;
@@ -48,6 +51,9 @@ const getRepoStacks = (repoName: string) => {
             break;
         case 'hangman':
             stacks = ['TypeScript',];
+            break;
+        case 'user-game-api':
+            stacks = ['Node.js', 'Express', 'PostgreSQL', 'Heroku',];
             break;
         default:
             stacks = [];
