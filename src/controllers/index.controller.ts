@@ -8,14 +8,16 @@ export const getIndex = async (req: Request, res: Response) => {
     const contacts = await contactModel.find();
     res.render('index', {
         title: 'Muhammad Naufal Kateni',
-        metaUrl: baseUrl,
-        metaImage: `${baseUrl}img/muhammad-naufal-kateni.jpg`,
-        metaDescription: 'Muhammad Naufal Kateni\'s portfolio website',
+        meta: {
+            url: baseUrl,
+            image: `${baseUrl}img/muhammad-naufal-kateni.jpg`,
+            description: 'Muhammad Naufal Kateni\'s portfolio website'
+        },
         layout: 'layouts/base',
         styles: ['output'],
         scripts: ['global', 'index'],
         contacts,
         skills,
-        trailingDotUrl: '',
+        trailingDotUrl: ''
     });
 }

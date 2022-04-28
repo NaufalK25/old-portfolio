@@ -4,20 +4,20 @@ import { IContact } from '../interfaces/contact.interface';
 const contactSchema = new Schema<IContact>({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     contact: {
         type: String,
-        required: true,
+        required: true
     },
     url: {
         type: String,
-        required: true,
+        required: true
     },
     svg: {
         type: String,
-        required: true,
-    },
+        required: true
+    }
 });
 
 export const contactModel = model<IContact>('Contact', contactSchema);

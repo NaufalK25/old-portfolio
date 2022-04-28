@@ -8,4 +8,5 @@ connect(
         } else {
             console.log(`Error on DB connection: ${err}`);
         }
-    });
+    }
+);
