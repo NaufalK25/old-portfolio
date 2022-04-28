@@ -53,7 +53,7 @@ const getRepoStacks = (repoName: string) => {
             stacks = ['TypeScript'];
             break;
         case 'user-game-api':
-            stacks = ['Node.js', 'Express', 'PostgreSQL', 'Heroku'];
+            stacks = ['Bootstrap', 'Node.js', 'Express', 'PostgreSQL', 'Heroku'];
             break;
         default:
             stacks = [];
