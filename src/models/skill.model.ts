@@ -5,14 +5,14 @@ import { stackSchema } from './stack.model';
 export const skillSchema: Schema<ISkill> = new Schema<ISkill>({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     stacks: [{
         type: Schema.Types.ObjectId,
         ref: 'Stack',
         required: true,
-        schema: stackSchema,
-    }],
+        schema: stackSchema
+    }]
 });
 
 export const skillModel = model<ISkill>('Skill', skillSchema);

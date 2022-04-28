@@ -2,8 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import { baseUrl, port } from './src/config/constants';
-import { baseRoute } from './src/routes/base.route';
-import { errorRoute } from './src/routes/error.route';
+import router from './src/routes/index.route';
 
 // Get all environment variables
 dotenv.config();
@@ -22,8 +21,7 @@ app.use(express.static('dist/public'));
 require('./src/config/database');
 
 // Routes
-baseRoute(app);
-errorRoute(app);
+app.use(router);
 
 // Start server
 app.listen(port, () => {
