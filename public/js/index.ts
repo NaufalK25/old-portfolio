@@ -55,6 +55,15 @@ const getRepoStacks = (repoName: string) => {
         case 'user-game-api':
             stacks = ['Bootstrap', 'Node.js', 'Express', 'PostgreSQL', 'Heroku'];
             break;
+        case 'apache2-nodejs':
+            stacks = ['Node.js', 'Express', 'Apache2'];
+            break;
+        case 'GloomForest':
+            stacks = ['C#', 'Unity'];
+            break;
+        case 'foodgallery':
+            stacks = ['Bootstrap', 'PHP', 'CodeIgniter', 'MySQL', 'Heroku'];
+            break;
         default:
             stacks = [];
             break;
@@ -108,6 +117,7 @@ fetch('https://api.github.com/users/naufalk25/repos?sort=created')
                 const middleSection = document.createElement('section');
                 middleSection.classList.add(...['w-full', 'h-60', 'flex', 'items-end', 'justify-between', 'w-full', 'px-3', 'pb-3']);
                 middleSection.style.backgroundImage = `url(img/repositories/${repo.name}.png)`;
+
                 middleSection.classList.add(...['bg-cover', 'bg-center', 'bg-no-repeat',]);
 
                 // Middle Left Section

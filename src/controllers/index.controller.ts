@@ -17,7 +17,6 @@ export const getIndex = async (req: Request, res: Response) => {
         styles: ['output'],
         scripts: ['global', 'index'],
         contacts,
-        skills,
-        trailingDotUrl: ''
+        skills
     });
 }
