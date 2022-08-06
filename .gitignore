@@ -1,5 +1,7 @@
 # NodeJS
 /node_modules
+package-lock.json
+yarn.lock
 /dist
 
 # Environment variables
@@ -13,4 +15,4 @@
 .vscode
 
 # Miscellaneous
-/temp
+/storage
